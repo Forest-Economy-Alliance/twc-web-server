@@ -4,10 +4,11 @@ const { stdout } = require('process');
 const shell = require('shelljs')
 
 const app=express();
+process.env.NODE_ENV = 'production';
 app.set("view options", {layout: false});
 app.use(express.static(__dirname + '/public'));
-const PORT=3000;
- 
+const PORT=80;
+
 
 // static server the public folder a
 
