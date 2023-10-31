@@ -17,9 +17,9 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/refresh',(req,res)=>{
-    const path = ''
-shell.cd(path)
-    shell.exec('git pull origin main ',
+//     const path = ''
+// shell.cd(path)
+    shell.exec('git pull origin main',
         (err, stdout, stderr) => {
         
             if (err) {
@@ -29,6 +29,7 @@ shell.cd(path)
             
             console.log(`stderr: ${stderr}`);
             console.log(`stdout: ${stdout}`);
+            res.send("Successfully Updated")
           }
     )
     
